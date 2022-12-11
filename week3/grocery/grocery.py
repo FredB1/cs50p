@@ -1,12 +1,15 @@
-list = {}
+menu = dict()
 while True:
     try:
-        val = input("").upper()
-        if val not in list:
-            list[val] = 1
-        else:
-            print(list[val])
-        list = sorted(list)
+        val = input("").strip().upper()
+        temp =menu[val]
+        menu.update({val:temp+1})
+        
+    except KeyError:
+        menu.update({val:1})
+        sorted(menu.items())
+        
     except EOFError:
-        for item in list:
-            print(list[item], item )
+       for item in menu:
+           print(menu[item], item)
+       break  
