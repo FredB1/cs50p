@@ -7,9 +7,9 @@ while True:
         
     except KeyError:
         menu.update({val:1})
-        sorted(menu.items())
+        
         
     except EOFError:
-       for item in menu:
+       for item in sorted(menu.keys()):
            print(menu[item], item)
        break  
